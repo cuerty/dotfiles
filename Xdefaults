@@ -1,0 +1,92 @@
+! ~/.Xdefaults from my old Slackware 3.6 with Kernel 2.0.36, possible the
+! oldest configuration file I've.
+! $Id: Xdefaults 1 2008-06-17 13:06:40Z qwerty $
+
+Xft.dpi:       96
+Xft.antialias: 1
+Xft.hinting:   1
+Xft.hintstyle: hintfull
+Xft.rgba:      rgb
+
+! aterm options
+URxvt*loginShell:       true
+URxvt*transparent:      true
+URxvt*shading:          20
+URxvt*background:       Black
+URxvt*foreground:       White
+URxvt*scrollBar:        false
+URxvt*saveLines:        32767
+URxvt*termName:         rxvt
+! aterm*font:             -artwiz-drift-*-*-*-*-*-*-*-*-*-*-*-*
+! aterm*boldFont:         -artwiz-drift-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*font:             *-*-fixed-medium-r-normal--*-140-*-*-*-*-iso8859-1
+!URxvt*boldFont:         *-*-fixed-bold-r-normal--*-*-140-*-*-*-*-iso8859-1
+
+urxvt*font: xft:Monaco:antialias=true:size=12,SimSun:encoding=iso8859-1 
+urxvt*boldFont: xft:Monaco:bold:antialias=true:size=12,SimSun:encoding=iso8859-1 
+
+URxvt*color0:  rgb:00/00/00
+URxvt*color1:  rgb:cc/66/66
+URxvt*color2:  rgb:66/cc/66
+URxvt*color3:  rgb:cc/cc/66
+URxvt*color4:  rgb:66/66/cc
+URxvt*color5:  rgb:cc/66/cc
+URxvt*color6:  rgb:66/cc/cc
+URxvt*color7:  rgb:cc/cc/cc
+URxvt*color8:  rgb:63/33/33
+URxvt*color9:  rgb:ff/99/99
+URxvt*color10: rgb:99/ff/99
+URxvt*color11: rgb:ff/ff/99
+URxvt*color12: rgb:99/99/ff
+URxvt*color13: rgb:ff/99/ff
+URxvt*color14: rgb:99/ff/ff
+URxvt*color15: rgb:ff/ff/ff
+
+!{{{ XFONTSEL
+XFontSel*menu*showUnselectable:       false
+XFontSel*sampleText.background:      TEXTBG
+XFontSel*MenuButton.shadowWidth:          0
+XFontsel*Toggle*ToggleStyle:          check
+XFontsel*MenuButton*Justify:           left
+XFontsel*MenuButton*MenuButtonStyle: select
+xfontsel.pane.commandBox.quitButton.background: #777777
+xfontsel.pane.commandBox.quitButton.foreground: snow
+xfontsel.pane.commandBox.ownButton.background:  orange3
+xfontsel.pane.commandBox.ownButton.foreground:  snow
+xfontsel.pane.commandBox.countLabel.background: snow
+xfontsel.pane.viewPort.sampleText.background:   #777777
+xfontsel.pane.viewPort.sampleText.foreground:   snow
+xfontsel.pane.fieldBox.field0.background:  #777777
+xfontsel.pane.fieldBox.field0.foreground:  snow
+xfontsel.pane.fieldBox.field1.background:  #777777
+xfontsel.pane.fieldBox.field1.foreground:  snow
+xfontsel.pane.fieldBox.field2.background:  #777777
+xfontsel.pane.fieldBox.field2.foreground:  snow
+xfontsel.pane.fieldBox.field3.background:  #777777
+xfontsel.pane.fieldBox.field3.foreground:  snow
+xfontsel.pane.fieldBox.field4.background:  #777777
+xfontsel.pane.fieldBox.field4.foreground:  snow
+xfontsel.pane.fieldBox.field5.background:  #777777
+xfontsel.pane.fieldBox.field5.foreground:  snow
+xfontsel.pane.fieldBox.field6.background:  #777777
+xfontsel.pane.fieldBox.field6.foreground:  snow
+xfontsel.pane.fieldBox.field7.background:  #777777
+xfontsel.pane.fieldBox.field7.foreground:  snow
+xfontsel.pane.fieldBox.field8.background:  #777777
+xfontsel.pane.fieldBox.field8.foreground:  snow
+xfontsel.pane.fieldBox.field9.background:  #777777
+xfontsel.pane.fieldBox.field9.foreground:  snow
+xfontsel.pane.fieldBox.field10.background: #777777
+xfontsel.pane.fieldBox.field10.foreground: snow
+xfontsel.pane.fieldBox.field11.background: #777777
+xfontsel.pane.fieldBox.field11.foreground: snow
+xfontsel.pane.fieldBox.field12.background: #777777
+xfontsel.pane.fieldBox.field12.foreground: snow
+xfontsel.pane.fieldBox.field13.background: #777777
+xfontsel.pane.fieldBox.field13.foreground: snow
+xfontsel.pane.fieldBox*foreground:         #000000
+xfontsel.pane.fieldBox.MenuButton.borderWidth:   1
+xfontsel.pane.fieldBox.MenuButton.internalHeight:1
+xfontsel.pane.fieldBox.MenuButton.internalWidth: 2
+xfontsel.pane.fieldBox.MenuButton.shapeStyle:    rectangle
+!}}}
