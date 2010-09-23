@@ -1,0 +1,9 @@
+cuerty's dotfiles
+=================
+
+Those are the configuration file/scripts that I use.
+
+The Makefile present on this repo is used to deploy that configuration on
+Linux/Unix systems.
+
+Feel free to download, reuse or modify those files.
