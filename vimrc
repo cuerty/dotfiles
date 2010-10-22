@@ -120,7 +120,7 @@ if !has("unix")
   set guifont=Lucida_Console:h10:cANSI
 else
   " set guifont=Monospace\ 10
-  set guifont=Monaco\ 12
+  set guifont=Inconsolata\ 12
 endif
 " }}}
 
@@ -204,5 +204,7 @@ map <silent> <F1> <Esc>:call ToggleOverLengthHi()<CR>
 " noremap! <Left> <Esc>
 " noremap  <Right> ""
 " noremap! <Right> <Esc>
+
+let $LANG='en'
 
 " vim: set fenc=utf-8 tw=80 sw=2 ts=2 sts=2 et foldmethod=marker :
