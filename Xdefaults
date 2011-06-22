@@ -22,8 +22,8 @@ URxvt*termName:         rxvt
 !URxvt*font:             *-*-fixed-medium-r-normal--*-140-*-*-*-*-iso8859-1
 !URxvt*boldFont:         *-*-fixed-bold-r-normal--*-*-140-*-*-*-*-iso8859-1
 
-urxvt*font: xft:Monaco:antialias=true:size=12,SimSun:encoding=iso8859-1 
-urxvt*boldFont: xft:Monaco:bold:antialias=true:size=12,SimSun:encoding=iso8859-1 
+urxvt*font: xft:Inconsolata:antialias=true:size=12,SimSun:encoding=iso8859-1 
+urxvt*boldFont: xft:Inconsolata:bold:antialias=true:size=12,SimSun:encoding=iso8859-1 
 
 URxvt*color0:  rgb:00/00/00
 URxvt*color1:  rgb:cc/66/66
