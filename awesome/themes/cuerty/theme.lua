@@ -12,7 +12,7 @@ theme.wallpaper_cmd = { "awsetbg /home/qwerty/.wallpapers/Floating_Isle_by__kol.
 -- }}}
 
 -- {{{ Styles
-theme.font      = "Monaco 8"
+theme.font      = "Inconsolata 8"
 
 -- {{{ Colors
 theme.fg_normal = "#DCDCCC"
