@@ -8,7 +8,7 @@
 
 -- {{{ Main
 theme = {}
-theme.wallpaper_cmd = { "awsetbg /home/qwerty/.wallpapers/Floating_Isle_by__kol.jpg" }
+theme.wallpaper_cmd = { "/usr/bin/feh --bg-scale ~/Imágenes/Wallpapers/01875_horseheadnebula_2560x1024.jpg" }
 -- }}}
 
 -- {{{ Styles
