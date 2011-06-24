@@ -286,11 +286,7 @@ for i = 1, keynumber do
                   end),
         awful.key({ modkey }, "l",
                   function ()
-                      awful.util.spawn("/usr/bin/xscreensaver-command -lock")
-                  end),
-        awful.key({ modkey }, "p",
-                  function ()
-                      awful.util.spawn("/usr/bin/dmenu_run")
+                      awful.util.spawn("/usr/bin/gnome-screensaver-command -a")
                   end)
                   
                   
@@ -315,14 +311,13 @@ awful.rules.rules = {
     }},
     { rule = { class = "Xmessage", instance = "xmessage" },
       properties = { floating = true } },
-    { rule = { class = "Firefox", instance = "Navigator" },
+    { rule = { class = "Chrome", instance = "Chrome" },
       properties = { tag = tags[2][1] } },
-    { rule = { instance = "firefox-bin" },
-      properties = { floating = true } },
-    { rule = { class = "Pidgin" },
-      properties = { tag = tags[2][2] } },
     { rule = { class = "Thunderbird", instance = "Mail" },
-      properties = { tag = tags[2][9] } }
+      properties = { tag = tags[1][9] } },
+    { rule = { class = "Eclipse", instance = "Eclipse" },
+      properties = { tag = tags[2][2] } }
+      
 }
 -- }}}
 
@@ -360,10 +355,13 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 
 -- {{{ Launch default applications
 
-awful.util.spawn("/usr/bin/xscreensaver -no-splash")
+awful.util.spawn("/usr/bin/gnome-screensaver")
 awful.util.spawn("/usr/bin/urxvtd -q -f -o")
-awful.util.spawn("/usr/bin/firefox")
+awful.util.spawn("/opt/google/chrome/chrome")
 awful.util.spawn("/usr/bin/thunderbird")
-awful.util.spawn("/usr/bin/pidgin")
+awful.util.spawn("/usr/bin/empathy")
+awful.util.spawn("/usr/bin/skype")
+awful.util.spawn("/home/qwerty/bin/eclipse/eclipse")
+awful.util.spawn("/usr/bin/dropbox start")
 
 -- }}}
