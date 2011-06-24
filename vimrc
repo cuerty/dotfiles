@@ -1,7 +1,7 @@
 scriptencoding utf-8
 
 "
-" qwerty's ~/.vimrc
+" cuerty's ~/.vimrc
 "
 "
 
@@ -137,19 +137,6 @@ set numberwidth=4
 set number
 " }}}
 
-" {{{ OmniCpp settings
-" Behaive like a IDE that knows C++:
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-set completeopt=menu,menuone
-
-let OmniCpp_MayCompleteDot = 1 " autocomplete with .
-let OmniCpp_MayCompleteArrow = 1 " autocomplete with ->
-let OmniCpp_MayCompleteScope = 1 " autocomplete with ::
-let OmniCpp_SelectFirstItem = 2 " select first item (but don't insert)
-let OmniCpp_NamespaceSearch = 2 " search namespaces in this and included files
-let OmniCpp_ShowPrototypeInAbbr = 1 " show function prototype (i.e. parameters) in popup window
-" }}}
-
 " {{{ Tags settings
 " Add the default tags for the common libraries and the one in the current
 " directory:
@@ -176,6 +163,10 @@ map <C-s> :source ~/.vim/.session <cr>
 " Map F2 to Nerdtree.
 map <F2> :NERDTreeToggle<CR>
 
+" EOL and BOL in insert mode.
+imap <c-e> <c-o>$
+imap <c-a> <c-o>^
+
 " }}}
 
 " Probando si me conviene esto de resaltar despues de los 80 caracteres:
@@ -195,6 +186,7 @@ function ToggleOverLengthHi()
     endif
 endfunction
 map <silent> <F1> <Esc>:call ToggleOverLengthHi()<CR>
+map <silent> <F5> <Esc>:make<CR>
 
 " noremap  <Up> ""
 " noremap! <Up> <Esc>
