@@ -10,6 +10,7 @@ scriptencoding utf-8
 " We attempt to change as little as possible from Vim's defaults,
 " deviating only where it makes sense
 set nocompatible        " Use Vim defaults. (Much better!)
+filetype off
 set bs=2                " Allow backspacing over everything in insert mode.
 set ai                  " Always set auto-indenting on.
 set history=50          " keep 50 lines of command history.
@@ -23,7 +24,7 @@ set tabstop=4
 set expandtab
 " set number
 set numberwidth=3
-set textwidth=79
+set textwidth=10000
 
 set viminfo='20,\"500   " Keep a .viminfo file.
 
@@ -36,6 +37,24 @@ map Q gq
 set suffixes+=.info,.aux,.log,.dvi,.bbl,.out
 
 " }}}
+
+
+" {{{ Vundle settings
+" Install vundle:
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-surround'
+Bundle 'msanders/snipmate.vim'
+Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'vim-scripts/a.vim'
+
+" }}}
+
 
 " {{{ Modeline settings
 " Enable modelines:
@@ -81,33 +100,11 @@ set hlsearch
 " Enable plugin-provided filetype settings, but only if the ftplugin
 " directory exists.
 
-if isdirectory(expand("$VIMRUNTIME/ftplugin"))
-  filetype plugin on
-  filetype indent on
+filetype plugin indent on
 
-  " Python
-  let g:pyindent_open_paren = '4'
-  let g:pyindent_nested_paren = '4'
-  let g:pyindent_continue = '4'
-
-  " Ruby
-  au FileType ruby set softtabstop=2
-  au FileType ruby set tabstop=2
-  au FileType ruby set shiftwidth=2
-  au FileType ruby set et
-
-endif
-
-au BufRead,BufNewFile *.py set ts=4 sts=4 sw=4 et
-" au BufRead,BufNewFile *.py set textwidth=79
-au BufRead,BufNewFile *.py set textwidth=240
+au BufRead,BufNewFile *.py set ts=4 sts=4 sw=4 tw=0 et
 au BufRead,BufNewFile *.py highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py match BadWhitespace /^\t\+/
-
-au BufRead,BufNewFile *.c,*.cpp,*.h set ts=2 sts=2 sw=2 et
-au BufRead,BufNewFile *.c,*.cpp,*.h set textwidth=78
-au BufRead,BufNewFile *.c,*.cpp,*.h highlight BadWhitespace ctermbg=red guibg=red
-au BufRead,BufNewFile *.c,*.cpp,*.h match BadWhitespace /^\t\+/
 
 " }}}
 
@@ -137,65 +134,22 @@ set numberwidth=4
 set number
 " }}}
 
-" {{{ Tags settings
-" Add the default tags for the common libraries and the one in the current
-" directory:
-set tags+=~/.tags/std3.3.tags
-set tags+=~/.tags/poco-1.3.6p2-all.tags
-set tags+=./tags
-" }}}
-
 " {{{ Session settings
 " Store everything about a session:
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 " }}}
 
 " {{{ Mappings
-
 " Map F8 to taglist.
 nnoremap <silent> <F8> :Tlist<CR>
-" Map Control-F12 to rebuild the tags file.
-map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
-" Map Control-q to save the current session.
-map <C-q> :mksession! ~/.vim/.session <cr>
-" Map Control-s to load the previus session.
-map <C-s> :source ~/.vim/.session <cr>
 " Map F2 to Nerdtree.
 map <F2> :NERDTreeToggle<CR>
-
 " EOL and BOL in insert mode.
 imap <c-e> <c-o>$
 imap <c-a> <c-o>^
-
+" Let w!! save even if we don't have permissions over the file.
+cmap w!! w !sudo tee % >/dev/null
 " }}}
-
-" Probando si me conviene esto de resaltar despues de los 80 caracteres:
-" Highlight rows longer than 80 characters
-function ToggleOverLengthHi()
-    if exists("b:overlengthhi") && b:overlengthhi
-        highlight clear OverLength
-        let b:overlengthhi = 0
-        echo "overlength hilight off"
-    else
-        " adjust colors/styles as desired
-        highlight OverLength ctermbg=darkred gui=undercurl guisp=blue
-        " change '81' to be 1+(number of columns)
-        match OverLength /\%81v.\+/
-        let b:overlengthhi = 1
-        echo "overlength hilight on"
-    endif
-endfunction
-map <silent> <F1> <Esc>:call ToggleOverLengthHi()<CR>
-map <silent> <F5> <Esc>:make<CR>
-
-" noremap  <Up> ""
-" noremap! <Up> <Esc>
-" noremap  <Down> ""
-" noremap! <Down> <Esc>
-" noremap  <Left> ""
-" noremap! <Left> <Esc>
-" noremap  <Right> ""
-" noremap! <Right> <Esc>
 
 let $LANG='en'
 
